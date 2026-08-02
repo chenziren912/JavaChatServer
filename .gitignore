@@ -1,0 +1,28 @@
+# Runtime data and local secrets
+/chatserver/
+*.key
+*.pem
+*.p12
+*.jks
+.env
+.env.*
+!.env.example
+
+# Build output
+/target/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.tmp.*
+
+# Local tooling and IDE files
+/.agents/
+/.workbuddy/
+.idea/
+.vscode/
+*.iml
+
+# OS metadata
+Thumbs.db
+.DS_Store

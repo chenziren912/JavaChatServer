@@ -1,0 +1,181 @@
+:root {
+    --glass-surface: rgba(255, 255, 255, .84);
+    --glass-surface-strong: rgba(255, 255, 255, .91);
+    --glass-border: rgba(255, 255, 255, .74);
+    --glass-shadow: 0 14px 38px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .72);
+    --glass-overlay: rgba(0, 0, 0, .28);
+}
+
+body.t-dark, body.dark-mode, [data-theme="dark"] {
+    --glass-surface: rgba(17, 24, 39, .68);
+    --glass-surface-strong: rgba(17, 24, 39, .80);
+    --glass-border: rgba(255, 255, 255, .14);
+    --glass-shadow: 0 26px 76px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .08);
+    --glass-overlay: rgba(2, 6, 23, .52);
+}
+
+.glass-panel,
+.modal,
+.login-ann-sheet,
+.login-ann-side,
+.login-ann-main,
+.lv-up-card,
+.x-danmaku-prompt-card,
+.music-detail-card,
+.x-share-chat-card,
+.x-share-preview-card,
+.picker,
+.in-notify,
+.file-menu,
+.context-menu,
+.x-mobile-more-sheet,
+.x-share-overlay-sheet,
+.x-share-overlay-card,
+.x-ann-sheet,
+.x-gate-card,
+.tutorial-card,
+.group-user-picker-sheet,
+.camera-glass-panel,
+.game-msg-float,
+#imgTextInput {
+    background: var(--glass-surface) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--glass-shadow) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(112%) !important;
+    backdrop-filter: blur(12px) saturate(112%) !important;
+}
+
+.modal-overlay,
+.login-ann-overlay,
+.lv-up-overlay,
+.music-detail-overlay,
+.x-danmaku-prompt,
+.x-mobile-more,
+.glass-alert-layer,
+#shareTargetOverlay,
+#danmakuPromptOverlay,
+#imgEditorOv,
+#prevOv {
+    background: var(--glass-overlay) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.x-share-overlay-backdrop,
+.x-ann-backdrop,
+.x-mobile-more-backdrop,
+.group-user-picker-backdrop,
+.x-gate-ov {
+    background: var(--glass-overlay) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.modal::before,
+.glass-panel::before,
+.glass-alert-card::before { display: none; }
+
+.modal,
+.glass-panel,
+.glass-alert-card,
+.x-share-overlay-sheet,
+.x-ann-sheet,
+.x-gate-card,
+.tutorial-card,
+.group-user-picker-sheet,
+.camera-glass-panel {
+    position: relative;
+    overflow: hidden;
+}
+
+.modal input,
+.modal textarea,
+.modal select,
+.glass-panel input,
+.glass-panel textarea,
+.glass-panel select,
+.glass-alert-card input,
+.glass-alert-card textarea {
+    background: rgba(255, 255, 255, .34) !important;
+    border-color: rgba(255, 255, 255, .48) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+body.t-dark .modal input,
+body.t-dark .modal textarea,
+body.t-dark .modal select,
+body.t-dark .glass-panel input,
+body.t-dark .glass-panel textarea {
+    background: rgba(15, 23, 42, .42) !important;
+    border-color: rgba(255, 255, 255, .14) !important;
+}
+
+.toast {
+    background: rgba(255, 255, 255, .72) !important;
+    color: #20304a !important;
+    border: 1px solid rgba(255, 255, 255, .55) !important;
+    box-shadow: 0 16px 44px rgba(15, 23, 42, .22) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(150%) !important;
+    backdrop-filter: blur(20px) saturate(150%) !important;
+}
+
+body.t-dark .toast {
+    background: rgba(17, 24, 39, .78) !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, .14) !important;
+}
+
+.glass-alert-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.glass-alert-layer.show { display: flex; }
+
+.glass-alert-card {
+    width: min(410px, 92vw);
+    padding: 26px;
+    border-radius: 22px;
+    background: var(--glass-surface-strong);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(26px) saturate(160%);
+    backdrop-filter: blur(26px) saturate(160%);
+    text-align: center;
+    color: #172033;
+}
+
+.glass-alert-card h3 { margin: 0 0 10px; font-size: 19px; }
+.glass-alert-card p { margin: 0 0 20px; line-height: 1.7; color: #536079; white-space: pre-wrap; }
+.glass-alert-card button {
+    min-width: 110px;
+    padding: 9px 20px;
+    border: 0;
+    border-radius: 12px;
+    background: #07c160;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+body.t-dark .glass-alert-card { color: #f8fafc; }
+body.t-dark .glass-alert-card p { color: #cbd5e1; }
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .glass-panel, .modal, .login-ann-sheet, .glass-alert-card, .toast,
+    .x-share-overlay-sheet, .x-ann-sheet, .x-gate-card, .tutorial-card,
+    .group-user-picker-sheet, .camera-glass-panel {
+        background: rgba(255, 255, 255, .94) !important;
+    }
+    body.t-dark .glass-panel, body.t-dark .modal, body.t-dark .glass-alert-card, body.t-dark .toast,
+    body.t-dark .x-share-overlay-sheet, body.t-dark .x-ann-sheet, body.t-dark .x-gate-card,
+    body.t-dark .tutorial-card, body.t-dark .group-user-picker-sheet, body.t-dark .camera-glass-panel {
+        background: rgba(17, 24, 39, .95) !important;
+    }
+}
